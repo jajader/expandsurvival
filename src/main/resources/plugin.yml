@@ -1,0 +1,12 @@
+name: Expandsurvival
+version: 'alpha 1.0'
+main: team.expandsurvival.Expandsurvival
+api-version: '1.20'
+authors: [ jajader ]
+description: It is plugin that expand survival contents.
+
+commands:
+  reloadeye:
+    description: asdf
+    usage: sdf
+    aliases: [re, eye]
