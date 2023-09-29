@@ -196,9 +196,10 @@ public class Clickand implements Listener {
                     case 0:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★☆☆☆☆☆☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, gdf);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
 
@@ -210,7 +211,7 @@ public class Clickand implements Listener {
                     case 1:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★☆☆☆☆☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★☆☆☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -219,7 +220,7 @@ public class Clickand implements Listener {
                     case 2:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★☆☆☆☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★☆☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -228,7 +229,7 @@ public class Clickand implements Listener {
                     case 3:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★☆☆☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -237,7 +238,7 @@ public class Clickand implements Listener {
                     case 4:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★☆☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -246,7 +247,7 @@ public class Clickand implements Listener {
                     case 5:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★☆☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -255,7 +256,7 @@ public class Clickand implements Listener {
                     case 6:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★★☆☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★★☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -264,7 +265,7 @@ public class Clickand implements Listener {
                     case 7:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★★★☆☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★★★☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -273,7 +274,7 @@ public class Clickand implements Listener {
                     case 8:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★★★★☆"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"✪", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -282,7 +283,7 @@ public class Clickand implements Listener {
                     case 9:
                         swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "✪"));
                         swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                        //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                        swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         realc.setItemMeta(swordMeta);
 
                         p.closeInventory();
@@ -306,7 +307,7 @@ public class Clickand implements Listener {
                             case 2:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★☆☆☆☆☆☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
 
@@ -318,7 +319,7 @@ public class Clickand implements Listener {
                             case 3:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★☆☆☆☆☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★☆☆☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -327,7 +328,7 @@ public class Clickand implements Listener {
                             case 4:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★☆☆☆☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★☆☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -336,7 +337,7 @@ public class Clickand implements Listener {
                             case 5:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★☆☆☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, da);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★☆☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -345,7 +346,7 @@ public class Clickand implements Listener {
                             case 6:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★☆☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★☆☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -354,7 +355,7 @@ public class Clickand implements Listener {
                             case 7:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★☆☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★☆☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -363,7 +364,7 @@ public class Clickand implements Listener {
                             case 8:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★★☆☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★★☆☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
@@ -372,7 +373,7 @@ public class Clickand implements Listener {
                             case 9:
                                 swordMeta.setLore(Arrays.asList(ChatColor.GOLD+ "★★★★★★★★☆☆"));
                                 swordMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, daf);
-                                //swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+                                swordMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                                 realc.setItemMeta(swordMeta);
 
                                 tswordMeta.setLore(Arrays.asList(ChatColor.GOLD+"★★★★★★★★★☆", ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));

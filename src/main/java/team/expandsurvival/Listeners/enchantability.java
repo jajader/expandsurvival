@@ -59,11 +59,7 @@ public class enchantability implements Listener {
 //
     //}
 
-    @EventHandler
-    public void on(PlayerInteractEntityEvent e)
-    {
-        e.getPlayer().sendMessage(String.valueOf(e.getRightClicked()));
-    }
+
 
     @EventHandler
     public void newore(BlockBreakEvent e) {
