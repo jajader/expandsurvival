@@ -59,7 +59,7 @@ public class SWPassive implements Listener {
                 for (int t = 64; t > 0; t--) {
                     ItemStack i = new ItemStack(Material.IRON_NUGGET, t);
                     ItemMeta no1Meta = i.getItemMeta();
-                    no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                    no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                     no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                     i.setItemMeta(no1Meta);
                     if (p.getInventory().contains(i)) {
@@ -73,7 +73,7 @@ public class SWPassive implements Listener {
                 }
                 ItemStack i = new ItemStack(Material.IRON_NUGGET, havda);
                 ItemMeta no1Meta = i.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                 no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                 i.setItemMeta(no1Meta);
                 p.getInventory().removeItem(i);
@@ -281,14 +281,14 @@ public class SWPassive implements Listener {
             }
             ItemStack i = new ItemStack(Material.IRON_NUGGET, havda);
             ItemMeta noMeta = i.getItemMeta();
-            noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+            noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
             noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
             i.setItemMeta(noMeta);
 
             if ((dia.getAmount()+i.getAmount()) <= 64 ) {
                 ItemStack reali = new ItemStack(Material.IRON_NUGGET, dia.getAmount()+i.getAmount());
                 ItemMeta no1Meta = reali.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                 no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                 reali.setItemMeta(no1Meta);
                 p.getInventory().removeItem(i);
@@ -297,12 +297,12 @@ public class SWPassive implements Listener {
             } else {
                 ItemStack sixfour = new ItemStack(Material.IRON_NUGGET, 64);
                 ItemMeta no1Meta = sixfour.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                 no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                 sixfour.setItemMeta(no1Meta);
                 ItemStack remains = new ItemStack(Material.IRON_NUGGET, dia.getAmount()+i.getAmount()-64);
                 ItemMeta no2Meta = remains.getItemMeta();
-                no2Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                no2Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                 no2Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                 remains.setItemMeta(no2Meta);
                 p.getInventory().removeItem(i);

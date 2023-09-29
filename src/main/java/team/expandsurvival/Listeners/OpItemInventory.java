@@ -57,7 +57,7 @@ public class OpItemInventory implements Listener {
                     for (int t=64; t>0;t--) {
                         ItemStack i = new ItemStack(Material.IRON_NUGGET, t);
                         ItemMeta no1Meta = i.getItemMeta();
-                        no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                        no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                         no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                         i.setItemMeta(no1Meta);
                         if (p.getInventory().contains(i)) {
@@ -71,7 +71,7 @@ public class OpItemInventory implements Listener {
                     }
                     ItemStack i = new ItemStack(Material.IRON_NUGGET, havda);
                     ItemMeta no1Meta = i.getItemMeta();
-                    no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"");
+                    no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
                     no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
                     i.setItemMeta(no1Meta);
                     p.getInventory().removeItem(i);

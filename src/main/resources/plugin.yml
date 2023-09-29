@@ -10,3 +10,6 @@ commands:
     description: asdf
     usage: sdf
     aliases: [re, eye]
+
+
+libraries:

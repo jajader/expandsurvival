@@ -34,6 +34,7 @@ public final class Expandsurvival extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Structure(), this);
         getServer().getPluginManager().registerEvents(new SWPassive(), this);
         getServer().getPluginManager().registerEvents(new enchantability(), this);
+        getServer().getPluginManager().registerEvents(new CoolDown(), this);
 
         ItemStack Sb = new ItemStack(Material.STRUCTURE_BLOCK);
         ItemMeta st = Sb.getItemMeta();
