@@ -130,34 +130,34 @@ public class OpItemInventory implements Listener {
                     double vkrhl = 4.5*pt;
                     switch (pt) {
                         case 0:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★☆☆☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★☆☆☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 1:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★★☆☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★☆☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 2:
-                            swordMeta.setLore(Arrays.asList(ChatColor.STRIKETHROUGH+(ChatColor.GOLD+"★★★☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★☆☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 3:
-                            swordMeta.setLore(Arrays.asList(ChatColor.UNDERLINE+(ChatColor.GOLD+"★★★★☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★☆☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 4:
-                            swordMeta.setLore(Arrays.asList(ChatColor.MAGIC+(ChatColor.GOLD+"★★★★★☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★★☆☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 5:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★★★★★★☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★★★☆☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 6:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★★★★★★★☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★★★★☆☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 7:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★★★★★★★★☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★★★★★☆☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 8:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"★★★★★★★★★☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"★★★★★★★★★☆"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
                         case 9:
-                            swordMeta.setLore(Arrays.asList(ChatColor.ITALIC+(ChatColor.GOLD+"✪"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
+                            swordMeta.setLore(Arrays.asList((ChatColor.GOLD+"✪"), ChatColor.BLUE + "강화 성공 확률 : "+tjdrhd+"%", ChatColor.RED + "단순 강화 실패 확률 : "+dbwl+"%", ChatColor.LIGHT_PURPLE + "무기 파괴 확률 : "+vkrhl+"%"));
                             break;
 
 

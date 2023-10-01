@@ -7,6 +7,7 @@ import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,6 +22,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.util.Vector;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -85,18 +87,23 @@ public class SWPassive implements Listener {
                 ItemStack sword = e.getItem();
                 inv.setItem(19, sword);
 
-                ItemStack shar6 = sword;
-                ItemStack shar7 = sword;
-                ItemStack shar8 = sword;
-                ItemStack shar9 = sword;
-                ItemStack shar10 = sword;
+                ItemStack shar6 = sword.clone();
+                ItemStack shar7 = sword.clone();
+                ItemStack shar8 = sword.clone();
+                ItemStack shar9 = sword.clone();
+                ItemStack shar10 = sword.clone();
+                ItemStack aoe = sword.clone();
 
                 ItemMeta shar6Meta = shar6.getItemMeta();
                 ItemMeta shar7Meta = shar7.getItemMeta();
                 ItemMeta shar8Meta = shar8.getItemMeta();
                 ItemMeta shar9Meta = shar9.getItemMeta();
                 ItemMeta shar10Meta = shar10.getItemMeta();
+                ItemMeta aoeMeta = aoe.getItemMeta();
                 int ss = sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL);
+
+
+
 
                 if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 5) {
                     shar6Meta.addEnchant(Enchantment.DAMAGE_ALL, 6, true);
@@ -111,23 +118,34 @@ public class SWPassive implements Listener {
                     shar7.setItemMeta(shar7Meta);
                     inv.setItem(5, shar7);
                 }
+
                 if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 7 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 6 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 5) {
                     shar8Meta.addEnchant(Enchantment.DAMAGE_ALL, 8, true);
                     shar8Meta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"날카로움 VIII"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+(8-ss)));
                     shar8.setItemMeta(shar8Meta);
                     inv.setItem(6, shar8);
                 }
+
                 if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 8 ||sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 7 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 6 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 5) {
                     shar9Meta.addEnchant(Enchantment.DAMAGE_ALL, 9, true);
                     shar9Meta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"날카로움 IX"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+(9-ss)));
                     shar9.setItemMeta(shar9Meta);
                     inv.setItem(7, shar9);
                 }
+
                 if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 9 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 8 ||sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 7 ||sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 6 || sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) == 5) {
                     shar10Meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
                     shar10Meta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"날카로움 X"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+(10-ss)));
                     shar10.setItemMeta(shar10Meta);
                     inv.setItem(8, shar10);
+                }
+                if (!ChatColor.stripColor(sword.getItemMeta().getLore().toString()).contains("Arrow Of Explosion")) {
+                    if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                        aoeMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                    }
+                    aoeMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Arrow Of Explosion"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
+                    aoe.setItemMeta(aoeMeta);
+                    inv.setItem(13, aoe);
                 }
 
 
@@ -185,6 +203,16 @@ public class SWPassive implements Listener {
         e.setCancelled(true);
         ItemStack c = e.getCurrentItem();
         if (c==null) return;
+        Vector dir = p.getEyeLocation().getDirection();
+
+        ArmorStand as = p.getWorld().spawn(p.getLocation().add(dir), ArmorStand.class);
+
+        as.setHelmet(new ItemStack(Material.IRON_SWORD));
+        as.setVisible(false);
+        as.setCanPickupItems(false);
+        as.setGravity(false);
+
+
 
         if (!c.getItemMeta().getLore().toString().contains("마법 능력")) return;
 
@@ -192,6 +220,7 @@ public class SWPassive implements Listener {
         //if (e.getSlot() != 16 &&  !(e.getSlot() < 63 && 26<e.getSlot())) {
         //    e.setCancelled(true);
         //}
+        if (e.getSlot() == 19) return;
         if (c.getItemMeta().getLore() == null) return;
         ItemStack dia = e.getInventory().getItem(20);
 
@@ -231,6 +260,17 @@ public class SWPassive implements Listener {
                 willbere = 5-ss;
             }
         }
+        p.sendMessage(String.valueOf(willbere));
+        p.sendMessage(String.valueOf(typelevel));
+
+
+        if (c.getItemMeta().getLore().toString().contains("Arrow Of Explosion")) {
+            typelevel = 11;
+            willbere = 3;
+        }
+
+        p.sendMessage(String.valueOf(willbere));
+        p.sendMessage(String.valueOf(typelevel));
 
         if (willbere > dia.getAmount()) {
             regen(p, e.getInventory(), willbere-dia.getAmount());
@@ -250,6 +290,11 @@ public class SWPassive implements Listener {
             realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"날카로움 IX"+ChatColor.WHITE+" ]"));
         } else if (typelevel == 10) {
             realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"날카로움 X"+ChatColor.WHITE+" ]"));
+        } else if (typelevel == 11) {
+            if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                realcmeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+            }
+            realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Arrow Of Explosion"+ChatColor.WHITE+" ]"));
         }
         c.setItemMeta(realcmeta);
         e.getInventory().setItem(19, c);
