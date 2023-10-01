@@ -205,13 +205,6 @@ public class SWPassive implements Listener {
         if (c==null) return;
         Vector dir = p.getEyeLocation().getDirection();
 
-        ArmorStand as = p.getWorld().spawn(p.getLocation().add(dir), ArmorStand.class);
-
-        as.setHelmet(new ItemStack(Material.IRON_SWORD));
-        as.setVisible(false);
-        as.setCanPickupItems(false);
-        as.setGravity(false);
-
 
 
         if (!c.getItemMeta().getLore().toString().contains("마법 능력")) return;
