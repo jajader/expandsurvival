@@ -59,11 +59,11 @@ public class SWPassive implements Listener {
 
                 int havda = 0;
                 for (int t = 64; t > 0; t--) {
-                    ItemStack i = new ItemStack(Material.IRON_NUGGET, t);
-                    ItemMeta no1Meta = i.getItemMeta();
-                    no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-                    no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
-                    i.setItemMeta(no1Meta);
+                    ItemStack i = new ItemStack(Material.DISC_FRAGMENT_5, t);
+                    ItemMeta zetameta = i.getItemMeta();
+                    zetameta.setDisplayName(ChatColor.LIGHT_PURPLE + "제타석");
+                    zetameta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+                    i.setItemMeta(zetameta);
                     if (p.getInventory().contains(i)) {
                         havda = t;
                         break;
@@ -73,10 +73,10 @@ public class SWPassive implements Listener {
                 if (havda == 0) {
                     return;
                 }
-                ItemStack i = new ItemStack(Material.IRON_NUGGET, havda);
+                ItemStack i = new ItemStack(Material.DISC_FRAGMENT_5, havda);
                 ItemMeta no1Meta = i.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-                no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE + "제타석");
+                no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
                 i.setItemMeta(no1Meta);
                 p.getInventory().removeItem(i);
                 inv.setItem(20, i);
@@ -93,6 +93,9 @@ public class SWPassive implements Listener {
                 ItemStack shar9 = sword.clone();
                 ItemStack shar10 = sword.clone();
                 ItemStack aoe = sword.clone();
+                ItemStack ts  = sword.clone();
+                ItemStack aote  = sword.clone();
+                ItemStack Did  = sword.clone();
 
                 ItemMeta shar6Meta = shar6.getItemMeta();
                 ItemMeta shar7Meta = shar7.getItemMeta();
@@ -100,6 +103,10 @@ public class SWPassive implements Listener {
                 ItemMeta shar9Meta = shar9.getItemMeta();
                 ItemMeta shar10Meta = shar10.getItemMeta();
                 ItemMeta aoeMeta = aoe.getItemMeta();
+                ItemMeta tsMeta = ts.getItemMeta();
+                ItemMeta aoteMeta = ts.getItemMeta();
+                ItemMeta didMeta = Did.getItemMeta();
+
                 int ss = sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL);
 
 
@@ -146,6 +153,42 @@ public class SWPassive implements Listener {
                     aoeMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Arrow Of Explosion"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
                     aoe.setItemMeta(aoeMeta);
                     inv.setItem(13, aoe);
+                }
+
+                if (!ChatColor.stripColor(sword.getItemMeta().getLore().toString()).contains("척도")) {
+                    if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                        tsMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                    }
+                    tsMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"척도"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
+                    ts.setItemMeta(tsMeta);
+                    inv.setItem(15, ts);
+                }
+
+                if (!ChatColor.stripColor(sword.getItemMeta().getLore().toString()).contains("공간 도약")) {
+                    if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                        aoteMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                    }
+                    aoteMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"공간 도약"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
+                    aote.setItemMeta(aoteMeta);
+                    inv.setItem(17, aote);
+                }
+
+                if (!ChatColor.stripColor(sword.getItemMeta().getLore().toString()).contains("공간 도약")) {
+                    if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                        aoteMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                    }
+                    aoteMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"공간 도약"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
+                    aote.setItemMeta(aoteMeta);
+                    inv.setItem(17, aote);
+                }
+
+                if (!ChatColor.stripColor(sword.getItemMeta().getLore().toString()).contains("Deathless in Death")) {
+                    if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                        didMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+                    }
+                    aoteMeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Deathless in Death"+ChatColor.WHITE+" ]", ChatColor.RED+"마법 부여 비용: "+ChatColor.RED+ChatColor.WHITE+3));
+                    aote.setItemMeta(aoteMeta);
+                    inv.setItem(23, aote);
                 }
 
 
@@ -253,8 +296,6 @@ public class SWPassive implements Listener {
                 willbere = 5-ss;
             }
         }
-        p.sendMessage(String.valueOf(willbere));
-        p.sendMessage(String.valueOf(typelevel));
 
 
         if (c.getItemMeta().getLore().toString().contains("Arrow Of Explosion")) {
@@ -262,8 +303,21 @@ public class SWPassive implements Listener {
             willbere = 3;
         }
 
-        p.sendMessage(String.valueOf(willbere));
-        p.sendMessage(String.valueOf(typelevel));
+        if (c.getItemMeta().getLore().toString().contains("척도")) {
+            typelevel = 12;
+            willbere = 3;
+        }
+
+        if (c.getItemMeta().getLore().toString().contains("공간 도약")) {
+            typelevel = 13;
+            willbere = 3;
+        }
+
+        if (c.getItemMeta().getLore().toString().contains("Deathless in Death")) {
+            typelevel = 14;
+            willbere = 3;
+        }
+
 
         if (willbere > dia.getAmount()) {
             regen(p, e.getInventory(), willbere-dia.getAmount());
@@ -288,6 +342,21 @@ public class SWPassive implements Listener {
                 realcmeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
             }
             realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Arrow Of Explosion"+ChatColor.WHITE+" ]"));
+        } else if (typelevel == 12) {
+            if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                realcmeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+            }
+            realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"척도"+ChatColor.WHITE+" ]"));
+        } else if (typelevel == 13) {
+            if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                realcmeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+            }
+            realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"공간 도약"+ChatColor.WHITE+" ]"));
+        } else if (typelevel == 14) {
+            if (sword.getEnchantmentLevel(Enchantment.DAMAGE_ALL) >= 6) {
+                realcmeta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+            }
+            realcmeta.setLore(Arrays.asList(ChatColor.GOLD + "✪", ChatColor.YELLOW+"마법 능력: "+ChatColor.WHITE+"[ " +ChatColor.GOLD+"Deathless in Death"+ChatColor.WHITE+" ]"));
         }
         c.setItemMeta(realcmeta);
         e.getInventory().setItem(19, c);
@@ -307,7 +376,11 @@ public class SWPassive implements Listener {
 
             int havda = 0;
             for (int t = 64; t > 0; t--) {
-                ItemStack i = new ItemStack(Material.DIAMOND, t);
+                ItemStack i = new ItemStack(Material.DISC_FRAGMENT_5, t);
+                ItemMeta no1Meta = i.getItemMeta();
+                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE + "제타석");
+                no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+                i.setItemMeta(no1Meta);
                 if (p.getInventory().contains(i)) {
                     havda = t;
                     break;
@@ -317,32 +390,34 @@ public class SWPassive implements Listener {
             if (havda+dia.getAmount() < needdia) {
                 return;
             }
-            ItemStack i = new ItemStack(Material.IRON_NUGGET, havda);
-            ItemMeta noMeta = i.getItemMeta();
-            noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-            noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
-            i.setItemMeta(noMeta);
+            ItemStack i = new ItemStack(Material.DISC_FRAGMENT_5, havda);
+            ItemMeta no1Meta = i.getItemMeta();
+            no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE + "제타석");
+            no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+            i.setItemMeta(no1Meta);
 
             if ((dia.getAmount()+i.getAmount()) <= 64 ) {
-                ItemStack reali = new ItemStack(Material.IRON_NUGGET, dia.getAmount()+i.getAmount());
-                ItemMeta no1Meta = reali.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-                no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
-                reali.setItemMeta(no1Meta);
+                ItemStack reali = new ItemStack(Material.DISC_FRAGMENT_5, dia.getAmount()+i.getAmount());
+                ItemMeta noMeta = i.getItemMeta();
+                noMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "제타석");
+                noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+                reali.setItemMeta(noMeta);
+
+
                 p.getInventory().removeItem(i);
                 inv.setItem(20, reali);
 
             } else {
-                ItemStack sixfour = new ItemStack(Material.IRON_NUGGET, 64);
-                ItemMeta no1Meta = sixfour.getItemMeta();
-                no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-                no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
-                sixfour.setItemMeta(no1Meta);
-                ItemStack remains = new ItemStack(Material.IRON_NUGGET, dia.getAmount()+i.getAmount()-64);
-                ItemMeta no2Meta = remains.getItemMeta();
-                no2Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
-                no2Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
-                remains.setItemMeta(no2Meta);
+                ItemStack sixfour = new ItemStack(Material.DISC_FRAGMENT_5, 64);
+                ItemMeta no2Meta = sixfour.getItemMeta();
+                no2Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"제타석");
+                no2Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+                sixfour.setItemMeta(no2Meta);
+                ItemStack remains = new ItemStack(Material.DISC_FRAGMENT_5, dia.getAmount()+i.getAmount()-64);
+                ItemMeta no3Meta = remains.getItemMeta();
+                no3Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"제타석");
+                no3Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"기본 능력치 마법 부여에 사용할 수 있다."));
+                remains.setItemMeta(no3Meta);
                 p.getInventory().removeItem(i);
                 inv.setItem(20, sixfour);
                 p.getInventory().addItem(remains);

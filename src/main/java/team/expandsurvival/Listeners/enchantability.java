@@ -9,11 +9,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import javax.print.DocFlavor;
@@ -59,6 +63,14 @@ public class enchantability implements Listener {
 //
     //}
 
+    @EventHandler
+
+    public void setblock(BlockPlaceEvent e) {
+        if (e.getBlock().getType()  == Material.REINFORCED_DEEPSLATE) {
+            e.setCancelled(true);
+        }
+    }
+
 
 
     @EventHandler
@@ -66,11 +78,12 @@ public class enchantability implements Listener {
         if (e.getPlayer().getInventory().getItemInMainHand().getItemMeta() == null) return;
        if (e.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
             return;
+
        }
 
        if (e.getBlock().getType() == Material.DEEPSLATE) {
            double i = Math.random();
-           if (0<=i && i <= 0.09) {
+           if (0<=i && i <= 0.005) {
                ItemStack newore = new ItemStack(Material.IRON_NUGGET);
                ItemMeta noMeta = newore.getItemMeta();
                noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
@@ -82,7 +95,7 @@ public class enchantability implements Listener {
        }
         if (e.getBlock().getType() == Material.STONE) {
             double i = Math.random();
-            if (0<=i && i <= 0.09) {
+            if (0<=i && i <= 0.0005) {
                 ItemStack newore = new ItemStack(Material.IRON_NUGGET);
                 ItemMeta noMeta = newore.getItemMeta();
                 noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
@@ -98,7 +111,7 @@ public class enchantability implements Listener {
            return;
        }
        double i = Math.random();
-       if (0<=i && i <= 0.7) {
+       if (0<=i && i <= 0.35) {
            ItemStack newore = new ItemStack(Material.IRON_NUGGET);
            ItemMeta noMeta = newore.getItemMeta();
            noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");

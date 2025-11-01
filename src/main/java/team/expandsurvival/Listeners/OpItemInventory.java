@@ -2,6 +2,7 @@ package team.expandsurvival.Listeners;
 
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -43,7 +44,116 @@ public class OpItemInventory implements Listener {
 
             if (e.getHand() == EquipmentSlot.OFF_HAND) return;
             /* GUI 열기 및 lore 설정*/
+
+
+
             if (e.getClickedBlock().getType().equals(Material.STRUCTURE_BLOCK)) {
+
+                if (e.getItem().getType().equals(Material.IRON_NUGGET)) {
+
+                    if (p.isSneaking()) {
+                        int havda = 0;
+                        for (int t=64; t>0;t--) {
+                            ItemStack i = new ItemStack(Material.IRON_NUGGET, t);
+                            ItemMeta no1Meta = i.getItemMeta();
+                            no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
+                            no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                            i.setItemMeta(no1Meta);
+                            if (e.getItem().equals(i)) {
+                                havda=t;
+                                break;
+                            }
+                        }
+
+                        if (havda <= 31) return;
+
+                        ItemStack it = new ItemStack(Material.AIR);
+                        int slot = p.getInventory().getHeldItemSlot();
+                        ItemStack air = new ItemStack(Material.AIR);
+                        p.getInventory().setItem(slot, air);
+
+                        int havd2 = (havda - (havda % 32))/32;
+                        havda = havda % 32;
+
+                        ItemStack newore = new ItemStack(Material.IRON_NUGGET, havda);
+                        ItemMeta noMeta = newore.getItemMeta();
+                        noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
+                        noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                        newore.setItemMeta(noMeta);
+
+                        ItemStack newore2 = new ItemStack(Material.PAPER, havd2);
+                        ItemMeta noMeta2 = newore2.getItemMeta();
+                        noMeta2.setDisplayName(ChatColor.BLUE+"무기 파괴 마법 방지 주문서");
+                        noMeta2.setLore(Arrays.asList(ChatColor.DARK_AQUA+"무기 강화에서 파괴시 파괴를 1번 막아준다. 비단으로 만든것 같이 보인다."));
+                        noMeta2.addEnchant(Enchantment.SILK_TOUCH, 1, true);
+                        noMeta2.addEnchant(Enchantment.DIG_SPEED, 5, true);
+                        noMeta2.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                        newore2.setItemMeta(noMeta2);
+
+
+                        p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore);
+                        p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore2);
+
+                        return;
+
+                    }
+
+                    int havda = 0;
+                    for (int t=64; t>0;t--) {
+                        ItemStack i = new ItemStack(Material.IRON_NUGGET, t);
+                        ItemMeta no1Meta = i.getItemMeta();
+                        no1Meta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
+                        no1Meta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                        i.setItemMeta(no1Meta);
+                        if (e.getItem().equals(i)) {
+                            havda=t;
+                            break;
+                        }
+                    }
+
+                    if (havda <= 8) return;
+
+                    ItemStack it = new ItemStack(Material.AIR);
+                    int slot = p.getInventory().getHeldItemSlot();
+                    ItemStack air = new ItemStack(Material.AIR);
+                    p.getInventory().setItem(slot, air);
+
+                    int havd2 = (havda - (havda % 9))/9;
+                    havda = havda % 9;
+
+                    ItemStack newore = new ItemStack(Material.IRON_NUGGET, havda);
+                    ItemMeta noMeta = newore.getItemMeta();
+                    noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
+                    noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                    newore.setItemMeta(noMeta);
+
+                    ItemStack newore2 = new ItemStack(Material.REINFORCED_DEEPSLATE, havd2);
+                    ItemMeta noMeta2 = newore2.getItemMeta();
+                    noMeta2.setDisplayName(ChatColor.LIGHT_PURPLE+"제타석 파편");
+                    noMeta2.setLore(Arrays.asList(ChatColor.DARK_AQUA+"제타석 제작에 사용할 수 있다."));
+                    newore2.setItemMeta(noMeta2);
+
+
+                    p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore);
+                    p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore2);
+                }
+
+                if (e.getItem().getType().equals(Material.REINFORCED_DEEPSLATE)) {
+
+
+                    p.getInventory().getItemInMainHand().setAmount(p.getInventory().getItemInMainHand().getAmount() - 1);
+
+                    ItemStack newore = new ItemStack(Material.IRON_NUGGET, 9);
+                    ItemMeta noMeta = newore.getItemMeta();
+                    noMeta.setDisplayName(ChatColor.LIGHT_PURPLE+"이베르카늄");
+                    noMeta.setLore(Arrays.asList(ChatColor.DARK_AQUA+"아이템 강화에 사용할 수 있다."));
+                    newore.setItemMeta(noMeta);
+                    p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore);
+                }
+
+
+
+
 
                 if (e.getItem().getType().equals(Material.IRON_SWORD) || e.getItem().getType().equals(Material.WOODEN_SWORD) || e.getItem().getType().equals(Material.STONE_SWORD) || e.getItem().getType().equals(Material.GOLDEN_SWORD) || e.getItem().getType().equals(Material.DIAMOND_SWORD) || e.getItem().getType().equals(Material.NETHERITE_SWORD)) {
                     ItemStack k = e.getItem();

@@ -2,6 +2,10 @@ package team.expandsurvival.Listeners;
 
 import com.google.common.util.concurrent.Service;
 import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.ItemTag;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Content;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
@@ -23,7 +27,9 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.w3c.dom.Text;
 
+import java.awt.*;
 import java.util.*;
 
 import static org.bukkit.Bukkit.*;
@@ -178,7 +184,9 @@ public class Clickand implements Listener {
                     p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 0.5f, 1);
                 } else {
                     p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.5f, 1);
-                    p.sendMessage(p.getDisplayName()+ "(이)가 "+ChatColor.GOLD+"전설의 검"+ChatColor.WHITE+"을 제련하였습니다.");
+
+                    String message = p.getDisplayName()+ "(이)가 "+ChatColor.GOLD+"전설의 검"+ChatColor.WHITE+"을 제련하였습니다.";
+                    Bukkit.broadcastMessage(message);
 
                 }
                 tjdrhd = tjdrhd - 8.5;
@@ -385,11 +393,44 @@ public class Clickand implements Listener {
                     }
                 }
             } else {
-                p.playSound(p.getLocation(), Sound.BLOCK_END_GATEWAY_SPAWN, 0.5f, 1);
-                ItemStack air = new ItemStack(Material.AIR);
-                e.getInventory().setItem(19, air);
-                p.closeInventory();
-                return;
+
+
+                int havda = 0;
+                for (int t=64; t>0;t--) {
+                    ItemStack newore21 = new ItemStack(Material.PAPER, t);
+                    ItemMeta noMeta2 = newore21.getItemMeta();
+                    noMeta2.setDisplayName(ChatColor.BLUE+"무기 파괴 마법 방지 주문서");
+                    noMeta2.setLore(Arrays.asList(ChatColor.DARK_AQUA+"무기 강화에서 파괴시 파괴를 1번 막아준다. 비단으로 만든것 같이 보인다."));
+                    noMeta2.addEnchant(Enchantment.SILK_TOUCH, 1, true);
+                    noMeta2.addEnchant(Enchantment.DIG_SPEED, 5, true);
+                    noMeta2.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                    newore21.setItemMeta(noMeta2);
+                    if (p.getInventory().contains(newore21)) {
+                        havda=t;
+                        break;
+                    }
+                }
+
+                ItemStack newore21 = new ItemStack(Material.PAPER, havda);
+                ItemMeta noMeta2 = newore21.getItemMeta();
+                noMeta2.setDisplayName(ChatColor.BLUE+"무기 파괴 마법 방지 주문서");
+                noMeta2.setLore(Arrays.asList(ChatColor.DARK_AQUA+"무기 강화에서 파괴시 파괴를 1번 막아준다. 비단으로 만든것 같이 보인다."));
+                noMeta2.addEnchant(Enchantment.SILK_TOUCH, 1, true);
+                noMeta2.addEnchant(Enchantment.DIG_SPEED, 5, true);
+                noMeta2.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                newore21.setItemMeta(noMeta2);
+                if (havda>0) {
+                    p.getInventory().remove(newore21);
+                    newore21.setAmount(newore21.getAmount()-1);
+                    p.getLocation().getWorld().dropItemNaturally(p.getLocation(), newore21);
+                    p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.5f, 1);
+                    return;
+                } else {
+                    p.playSound(p.getLocation(), Sound.BLOCK_END_GATEWAY_SPAWN, 0.5f, 1);
+                    ItemStack air = new ItemStack(Material.AIR);
+                    e.getInventory().setItem(19, air);
+                    p.closeInventory();
+                }
             }
 
 
